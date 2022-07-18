@@ -4,7 +4,7 @@ import { mocked } from 'ts-jest/utils';
 import { getPrismicClient } from '../../services/prismic'
 
 const posts = [
-    { slug: "my-new-post", title: "My New Post", expect: 'Post test', updateAt: '30 de Abril'}
+    { slug: "my-new-post", title: "My New Post", excerpt: 'Post test', updatedAt: '30 de Abril'}
 ]
 
 jest.mock('../../services/prismic')
@@ -40,7 +40,7 @@ describe("Posts page", () => {
                     }
                 ]
             })
-        })
+        } as any)
 
         const response = await getStaticProps({})
 

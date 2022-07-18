@@ -24,7 +24,7 @@ describe("Home page", () => {
         retriveStripePricesMocked.mockResolvedValueOnce({
             id: "fake-price-id",
             unit_amount: 1000
-        })
+        } as any)
 
         const response = await getStaticProps({})
 
